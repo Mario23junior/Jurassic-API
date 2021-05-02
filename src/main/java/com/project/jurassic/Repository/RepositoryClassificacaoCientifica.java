@@ -8,4 +8,6 @@ import com.project.jurassic.Model.ClassificacaoCientifica;
 @Repository
 public interface RepositoryClassificacaoCientifica extends JpaRepository<ClassificacaoCientifica, Long>{
 
+	 ClassificacaoCientifica findByFamiliaIgnoreCaseContaining(String familia);
+
 }

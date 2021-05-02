@@ -1,5 +1,7 @@
 package com.project.jurassic.Controller;
 
+import java.util.Optional;
+
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -36,4 +38,36 @@ public class ClassificacaoCientificaController {
 		                       .findById(id)
 		                       .orElseThrow(() -> new ResponseStatusException(HttpStatus.NO_CONTENT,"id não encontrado"));
 	}
+	
+	
+	@GetMapping("/familia/{familia}")
+ 	public  ClassificacaoCientifica listByFamilia(@PathVariable("familia") String familia) {
+		Optional<ClassificacaoCientifica> findByDataByFamily = Optional.of(repositoryClassificacaoCientifica.findByFamiliaIgnoreCaseContaining(familia));
+	                  return findByDataByFamily.orElseThrow(() -> new ResponseStatusException(HttpStatus.NO_CONTENT,"Familia de dinossauro não encontrada"));
+
+		
+	}
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
