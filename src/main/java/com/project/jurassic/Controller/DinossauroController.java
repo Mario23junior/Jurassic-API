@@ -1,6 +1,7 @@
 package com.project.jurassic.Controller;
 
 import org.springframework.http.HttpStatus;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -30,9 +31,21 @@ public class DinossauroController {
 	}
 	
 	@GetMapping("/{id}")
-	public Dinossauro listById(@PathVariable Long id) {
+ 	public Dinossauro listById(@PathVariable Long id) {
 		return repositoryDinossauro
 				         .findById(id)
 				         .orElseThrow(() -> new ResponseStatusException(HttpStatus.NO_CONTENT,"Id de usuario não encontrado"));
+	}
+	
+	
+	@DeleteMapping("/{id}")
+	@ResponseStatus(HttpStatus.NO_CONTENT)
+	public void delete(@PathVariable Long id) {
+		   repositoryDinossauro
+				   .findById(id)
+				   .map(delete -> {
+					   repositoryDinossauro.delete(delete);
+					   return delete;
+				   }).orElseThrow( () -> new ResponseStatusException(HttpStatus.NO_CONTENT,"nenhum id foi encontrado para deleta"));
 	}
 }
