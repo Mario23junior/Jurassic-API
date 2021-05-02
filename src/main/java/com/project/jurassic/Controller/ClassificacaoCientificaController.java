@@ -7,6 +7,7 @@ import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -57,6 +58,15 @@ public class ClassificacaoCientificaController {
 		                      }).orElseThrow(() -> new ResponseStatusException(HttpStatus.NO_CONTENT,"Nenhuma informação encontrada para ser deletada"));
 	}
 	
-	
-
+	@PutMapping("/{id}")
+	public void update(@PathVariable Long id , @RequestBody ClassificacaoCientifica classificacaoCientifica ) {
+		 repositoryClassificacaoCientifica 
+		                       .findById(id)
+		                       .map(update -> {
+		                    	   classificacaoCientifica.setId(update.getId());
+		                    	   repositoryClassificacaoCientifica.save(classificacaoCientifica);
+		                    	   return update;
+		                       }).orElseThrow(() -> new ResponseStatusException(HttpStatus.NO_CONTENT,"Nenhum id foi encontrado"));
+	}
 }
+ 
