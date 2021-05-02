@@ -1,6 +1,6 @@
 package com.project.jurassic.Controller;
 
-import java.util.Optional;
+import java.util.List;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.server.ResponseStatusException;
@@ -39,35 +40,10 @@ public class ClassificacaoCientificaController {
 		                       .orElseThrow(() -> new ResponseStatusException(HttpStatus.NO_CONTENT,"id não encontrado"));
 	}
 	
-	
-	@GetMapping("/familia/{familia}")
- 	public  ClassificacaoCientifica listByFamilia(@PathVariable("familia") String familia) {
-		Optional<ClassificacaoCientifica> findByDataByFamily = Optional.of(repositoryClassificacaoCientifica.findByFamiliaIgnoreCaseContaining(familia));
-	                  return findByDataByFamily.orElseThrow(() -> new ResponseStatusException(HttpStatus.NO_CONTENT,"Familia de dinossauro não encontrada"));
 
-		
+	@GetMapping("/familia")
+		public  List<ClassificacaoCientifica> listByFamilia(@RequestParam(name = "familia") String familia) {
+		return repositoryClassificacaoCientifica.findByFamiliaIgnoreCaseContaining(familia);	
 	}
+
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
