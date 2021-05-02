@@ -14,7 +14,7 @@ public class Dinossauro {
 	
 	private String Nome;
 	
-	private String Comprimento;
+	private Double Comprimento;
 	
 	private Double Peso;
 	
@@ -28,20 +28,20 @@ public class Dinossauro {
 		this.id = id;
 	}
 
+	public Double getComprimento() {
+		return Comprimento;
+	}
+
+	public void setComprimento(Double comprimento) {
+		Comprimento = comprimento;
+	}
+
 	public String getNome() {
 		return Nome;
 	}
 
 	public void setNome(String nome) {
 		Nome = nome;
-	}
-
-	public String getComprimento() {
-		return Comprimento;
-	}
-
-	public void setComprimento(String comprimento) {
-		Comprimento = comprimento;
 	}
 
 	public Double getPeso() {
