@@ -12,13 +12,13 @@ public class Caracteristicas {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 	
-	private String Habitat;
+	private String habitat;
 	
-	private String Alimento;
+	private String alimento;
 	
-	private String Definicao;
+	private String definicao;
 	
-	private String Curiosidade;
+	private String curiosidade;
 
 	public Long getId() {
 		return id;
@@ -29,37 +29,34 @@ public class Caracteristicas {
 	}
 
 	public String getHabitat() {
-		return Habitat;
+		return habitat;
 	}
 
 	public void setHabitat(String habitat) {
-		Habitat = habitat;
+		this.habitat = habitat;
 	}
 
 	public String getAlimento() {
-		return Alimento;
+		return alimento;
 	}
 
 	public void setAlimento(String alimento) {
-		Alimento = alimento;
+		this.alimento = alimento;
 	}
 
 	public String getDefinicao() {
-		return Definicao;
+		return definicao;
 	}
 
 	public void setDefinicao(String definicao) {
-		Definicao = definicao;
+		this.definicao = definicao;
 	}
 
 	public String getCuriosidade() {
-		return Curiosidade;
+		return curiosidade;
 	}
 
 	public void setCuriosidade(String curiosidade) {
-		Curiosidade = curiosidade;
+		this.curiosidade = curiosidade;
 	}
-	
-	
-	
 }
