@@ -12,14 +12,15 @@ public class ClassificacaoCientifica {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 	
-	private String NomeCientifico;
+	private String nomeCientifico;
 	
-	private String Reino;
+	private String reino;
 	
-	private String Familia;
+	private String familia;
 	
-	private String Subordem;
+	private String subordem;
 
+	
 	public Long getId() {
 		return id;
 	}
@@ -29,39 +30,34 @@ public class ClassificacaoCientifica {
 	}
 
 	public String getNomeCientifico() {
-		return NomeCientifico;
+		return nomeCientifico;
 	}
 
 	public void setNomeCientifico(String nomeCientifico) {
-		NomeCientifico = nomeCientifico;
+		this.nomeCientifico = nomeCientifico;
 	}
 
 	public String getReino() {
-		return Reino;
+		return reino;
 	}
 
 	public void setReino(String reino) {
-		Reino = reino;
+		this.reino = reino;
 	}
 
 	public String getFamilia() {
-		return Familia;
+		return familia;
 	}
 
 	public void setFamilia(String familia) {
-		Familia = familia;
+		this.familia = familia;
 	}
 
 	public String getSubordem() {
-		return Subordem;
+		return subordem;
 	}
 
 	public void setSubordem(String subordem) {
-		Subordem = subordem;
+		this.subordem = subordem;
 	}
-
-	
-	
-	
-	
 } 
