@@ -3,6 +3,8 @@ package com.project.jurassic.Controller;
 import java.util.List;
 import java.util.Optional;
 
+import javax.validation.Valid;
+
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -31,7 +33,7 @@ public class CaracteristicasController {
 	
 	@PostMapping
 	@ResponseStatus(HttpStatus.CREATED)
-	public Caracteristicas save(@RequestBody Caracteristicas caracteristicas) {
+	public Caracteristicas save(@RequestBody @Valid Caracteristicas caracteristicas) {
 		return repositoryCaracteristicas.save(caracteristicas);
 	}
 	
@@ -61,7 +63,7 @@ public class CaracteristicasController {
 
 	
 	@PutMapping("/{id}")
-	public void update(@RequestBody Caracteristicas caracteristicas, @PathVariable Long id) {
+	public void update(@RequestBody @Valid Caracteristicas caracteristicas, @PathVariable Long id) {
 		 repositoryCaracteristicas
 		                  .findById(id)
 		                  .map(update -> {

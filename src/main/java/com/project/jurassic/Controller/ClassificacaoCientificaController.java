@@ -2,6 +2,8 @@ package com.project.jurassic.Controller;
 
 import java.util.List;
 
+import javax.validation.Valid;
+
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -31,7 +33,7 @@ public class ClassificacaoCientificaController {
 	
 	@PostMapping
 	@ResponseStatus(HttpStatus.CREATED)
-	public ClassificacaoCientifica save(@RequestBody ClassificacaoCientifica classificacaoCientifica ) {
+	public ClassificacaoCientifica save(@RequestBody @Valid ClassificacaoCientifica classificacaoCientifica ) {
 		 return repositoryClassificacaoCientifica.save(classificacaoCientifica);
 	}
 	
@@ -59,7 +61,7 @@ public class ClassificacaoCientificaController {
 	}
 	
 	@PutMapping("/{id}")
-	public void update(@PathVariable Long id , @RequestBody ClassificacaoCientifica classificacaoCientifica ) {
+	public void update(@PathVariable Long id , @RequestBody @Valid ClassificacaoCientifica classificacaoCientifica ) {
 		 repositoryClassificacaoCientifica 
 		                       .findById(id)
 		                       .map(update -> {
