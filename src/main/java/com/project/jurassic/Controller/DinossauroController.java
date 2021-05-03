@@ -1,5 +1,7 @@
 package com.project.jurassic.Controller;
 
+import javax.validation.Valid;
+
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -27,7 +29,7 @@ public class DinossauroController {
 	
 	@PostMapping
 	@ResponseStatus(HttpStatus.CREATED)
-	public Dinossauro save(@RequestBody Dinossauro dinossauro) {
+	public Dinossauro save(@RequestBody @Valid Dinossauro dinossauro) {
  	    return repositoryDinossauro.save(dinossauro);
 	}
 	
@@ -51,7 +53,7 @@ public class DinossauroController {
 	}
 	
 	@PutMapping("/{id}")
- 	public void update(@PathVariable Long id, @RequestBody Dinossauro dinossauro) {
+ 	public void update(@PathVariable Long id, @RequestBody @Valid Dinossauro dinossauro) {
 		   repositoryDinossauro
 		                   .findById(id)
 		                   .map(updateDate -> {

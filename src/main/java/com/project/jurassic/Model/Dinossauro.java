@@ -4,6 +4,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.validation.constraints.NotEmpty;
 
 @Entity
 public class Dinossauro {
@@ -12,6 +13,7 @@ public class Dinossauro {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 	
+	@NotEmpty(message = "{campo.dino.nome}")
 	private String Nome;
 	
 	private Double Comprimento;
