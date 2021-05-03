@@ -4,6 +4,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.validation.constraints.Max;
 import javax.validation.constraints.NotEmpty;
 
 @Entity
@@ -16,10 +17,13 @@ public class Dinossauro {
 	@NotEmpty(message = "{campo.dino.nome}")
 	private String Nome;
 	
+	@Max(78231)
 	private Double Comprimento;
 	
+	@Max(78231)
 	private Double Peso;
 	
+	@Max(78231)
 	private Double Altura;
 
 	public Long getId() {
