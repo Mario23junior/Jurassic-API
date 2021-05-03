@@ -4,6 +4,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.validation.constraints.NotEmpty;
 
 @Entity
 public class Caracteristicas {
@@ -12,12 +13,16 @@ public class Caracteristicas {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 	
+	@NotEmpty(message = "{campo.classCientifica.habitat}")
 	private String habitat;
 	
+	@NotEmpty(message = "{campo.classCientifica.alimento}")
 	private String alimento;
 	
+	@NotEmpty(message = "{campo.classCientifica.definicao}")
 	private String definicao;
 	
+	@NotEmpty(message = "{campo.classCientifica.curiosidade}")
 	private String curiosidade;
 
 	public Long getId() {
