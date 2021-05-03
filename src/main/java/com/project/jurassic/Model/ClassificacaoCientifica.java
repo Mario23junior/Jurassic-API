@@ -4,6 +4,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.validation.constraints.NotEmpty;
 
 @Entity
 public class ClassificacaoCientifica {
@@ -12,12 +13,16 @@ public class ClassificacaoCientifica {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 	
+	@NotEmpty(message = "{campo.classCientifica.nomeCient}")
 	private String nomeCientifico;
 	
+	@NotEmpty(message = "{campo.classCientifica.reino}")
 	private String reino;
 	
+	@NotEmpty(message = "{campo.classCientifica.familia}")
 	private String familia;
 	
+	@NotEmpty(message = "{campo.classCientifica.subordem}")
 	private String subordem;
 
 	
