@@ -4,6 +4,7 @@ import java.util.List;
 import java.util.Optional;
 
 import org.springframework.http.HttpStatus;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -46,4 +47,18 @@ public class CaracteristicasController {
 	List<Caracteristicas> listHabitat(@RequestParam(name = "alimento") String alimento){
 		return repositoryCaracteristicas.findByAlimentoIgnoreCaseContaining(alimento);
 	}
+	
+	@DeleteMapping("/{id}")
+ 	public void delete(@PathVariable Long id) {
+		 repositoryCaracteristicas
+		            .findById(id)
+		            .map(delete -> {
+		            	repositoryCaracteristicas.delete(delete);
+		            	return delete;
+		            }).orElseThrow(() -> new ResponseStatusException(HttpStatus.NO_CONTENT,"nenhum id encontrado para ser deletado"));
+	}
+	
+	
+	
+	
 }
