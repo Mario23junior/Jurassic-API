@@ -41,17 +41,18 @@ public class ImplementDTO implements ServiceDTOImplements {
 		dinossauroDto.setPeso(dinossauro.getPeso());
 		dinossauroDto.setAltura(dinossauro.getAltura());
 		
+		ClassificacaoCientifica classificacaoCientifica = dinossauro.getClassificacaoCientificas();
+		dinossauroDto.setNomeCientifico(classificacaoCientifica.getNomeCientifico());
+		dinossauroDto.setReino(classificacaoCientifica.getReino());
+		dinossauroDto.setFamilia(classificacaoCientifica.getFamilia());
+		dinossauroDto.setSubordem(classificacaoCientifica.getSubordem());
+		
 		Caracteristicas caracteristicas = dinossauro.getCaracteristicas();
 		dinossauroDto.setHabitat(caracteristicas.getHabitat());
 		dinossauroDto.setAlimento(caracteristicas.getAlimento());
 		dinossauroDto.setDefinicao(caracteristicas.getDefinicao());
 		dinossauroDto.setCuriosidade(caracteristicas.getCuriosidade());
 		
-		ClassificacaoCientifica classificacaoCientifica = dinossauro.getClassificacaoCientificas();
-		dinossauroDto.setNomeCientifico(classificacaoCientifica.getNomeCientifico());
-		dinossauroDto.setReino(classificacaoCientifica.getReino());
-		dinossauroDto.setFamilia(classificacaoCientifica.getFamilia());
-		dinossauroDto.setSubordem(classificacaoCientifica.getSubordem());
 		
 		return dinossauroDto;
 		
