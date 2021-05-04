@@ -2,7 +2,7 @@ package com.project.jurassic.ModelDTO;
 
 public class ClassificacaoCientificaDTO {
     
-	private long id;
+	private Long id;
  	private String nomeCientifico;
  	private String reino;
  	private String familia;	
