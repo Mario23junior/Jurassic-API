@@ -35,8 +35,7 @@ public class Dinossauro {
 	@ManyToOne
 	@JoinColumn(name = "classificacaoCientificas_id")
 	private ClassificacaoCientifica classificacaoCientificas;
-	
- 
+
 	public Long getId() {
 		return id;
 	}
@@ -45,20 +44,20 @@ public class Dinossauro {
 		this.id = id;
 	}
 
-	public Double getComprimento() {
-		return Comprimento;
-	}
-
-	public void setComprimento(Double comprimento) {
-		Comprimento = comprimento;
-	}
-
 	public String getNome() {
 		return Nome;
 	}
 
 	public void setNome(String nome) {
 		Nome = nome;
+	}
+
+	public Double getComprimento() {
+		return Comprimento;
+	}
+
+	public void setComprimento(Double comprimento) {
+		Comprimento = comprimento;
 	}
 
 	public Double getPeso() {
@@ -92,10 +91,5 @@ public class Dinossauro {
 	public void setClassificacaoCientificas(ClassificacaoCientifica classificacaoCientificas) {
 		this.classificacaoCientificas = classificacaoCientificas;
 	}
-	
-	
-
-	
-	
 	
 }
