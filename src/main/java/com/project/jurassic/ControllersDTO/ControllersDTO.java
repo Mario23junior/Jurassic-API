@@ -1,6 +1,7 @@
 package com.project.jurassic.ControllersDTO;
 
 import java.util.List;
+import java.util.stream.Collectors;
 
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -22,6 +23,8 @@ public class ControllersDTO {
 	@GetMapping("/list")
 	public List<DinossauroDTO> listAllDataDTO() {
 		     List<DinossauroDTO> list = listAll.listAllbyData();
-		     return list;
+		     return list
+		    		  .stream()
+		    		  .collect(Collectors.toList());
 	}
 }

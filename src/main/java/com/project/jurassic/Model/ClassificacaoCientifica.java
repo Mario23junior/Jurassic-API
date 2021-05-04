@@ -65,4 +65,12 @@ public class ClassificacaoCientifica {
 	public void setSubordem(String subordem) {
 		this.subordem = subordem;
 	}
+
+	@Override
+	public String toString() {
+		return "ClassificacaoCientifica [id=" + id + ", nomeCientifico=" + nomeCientifico + ", reino=" + reino
+				+ ", familia=" + familia + ", subordem=" + subordem + "]";
+	}
+	
+	
 } 
