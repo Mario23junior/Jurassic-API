@@ -4,6 +4,8 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.validation.constraints.Max;
 import javax.validation.constraints.NotEmpty;
 
@@ -25,7 +27,16 @@ public class Dinossauro {
 	
 	@Max(78231)
 	private Double Altura;
-
+	
+	@ManyToOne
+	@JoinColumn(name = "caracteristicas_id")
+	private Caracteristicas caracteristicas;
+	
+	@ManyToOne
+	@JoinColumn(name = "classificacaoCientificas_id")
+	private ClassificacaoCientifica classificacaoCientificas;
+	
+ 
 	public Long getId() {
 		return id;
 	}
@@ -65,6 +76,23 @@ public class Dinossauro {
 	public void setAltura(Double altura) {
 		Altura = altura;
 	}
+
+	public Caracteristicas getCaracteristicas() {
+		return caracteristicas;
+	}
+
+	public void setCaracteristicas(Caracteristicas caracteristicas) {
+		this.caracteristicas = caracteristicas;
+	}
+
+	public ClassificacaoCientifica getClassificacaoCientificas() {
+		return classificacaoCientificas;
+	}
+
+	public void setClassificacaoCientificas(ClassificacaoCientifica classificacaoCientificas) {
+		this.classificacaoCientificas = classificacaoCientificas;
+	}
+	
 	
 
 	
