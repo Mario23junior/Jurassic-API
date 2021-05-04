@@ -32,14 +32,16 @@ public class ImplementDTO implements ServiceDTOImplements {
 				
   	}
 	
+ 
 	public DinossauroDTO ConvertToDTO(Dinossauro dinossauro) {
 		
-		DinossauroDTO dinossauroDto = new DinossauroDTO();
+ 		DinossauroDTO dinossauroDto = new DinossauroDTO();
 		dinossauroDto.setId(dinossauro.getId());
 		dinossauroDto.setNome(dinossauro.getNome());
 		dinossauroDto.setComprimento(dinossauro.getComprimento());
 		dinossauroDto.setPeso(dinossauro.getPeso());
 		dinossauroDto.setAltura(dinossauro.getAltura());
+		
 		
 		ClassificacaoCientifica classificacaoCientifica = dinossauro.getClassificacaoCientificas();
 		dinossauroDto.setNomeCientifico(classificacaoCientifica.getNomeCientifico());
@@ -52,8 +54,7 @@ public class ImplementDTO implements ServiceDTOImplements {
 		dinossauroDto.setAlimento(caracteristicas.getAlimento());
 		dinossauroDto.setDefinicao(caracteristicas.getDefinicao());
 		dinossauroDto.setCuriosidade(caracteristicas.getCuriosidade());
-		
-		
+
 		return dinossauroDto;
 		
 	}

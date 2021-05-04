@@ -3,21 +3,21 @@ package com.project.jurassic.ModelDTO;
 public class DinossauroDTO {
    
 	private Long id;
- 	private String Nome;
+	
+	private String Nome;	
  	private Double Comprimento;
  	private Double Peso;
  	private Double Altura;
- 	
+	
  	private String habitat;
  	private String alimento;
  	private String definicao;
  	private String curiosidade;
  	
-	private String nomeCientifico;
+ 	private String nomeCientifico;
  	private String reino;
  	private String familia;	
  	private String subordem;
- 	
 	public Long getId() {
 		return id;
 	}
@@ -95,8 +95,5 @@ public class DinossauroDTO {
 	}
 	public void setSubordem(String subordem) {
 		this.subordem = subordem;
-	} 	
- 	
-	
- 
+	}
 }

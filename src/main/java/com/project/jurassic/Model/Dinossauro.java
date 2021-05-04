@@ -9,6 +9,8 @@ import javax.persistence.ManyToOne;
 import javax.validation.constraints.Max;
 import javax.validation.constraints.NotEmpty;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 @Entity
 public class Dinossauro {
     
@@ -75,7 +77,8 @@ public class Dinossauro {
 	public void setAltura(Double altura) {
 		Altura = altura;
 	}
-
+    
+	@JsonIgnore
 	public Caracteristicas getCaracteristicas() {
 		return caracteristicas;
 	}
@@ -83,13 +86,13 @@ public class Dinossauro {
 	public void setCaracteristicas(Caracteristicas caracteristicas) {
 		this.caracteristicas = caracteristicas;
 	}
-
+    
+	@JsonIgnore
 	public ClassificacaoCientifica getClassificacaoCientificas() {
 		return classificacaoCientificas;
 	}
-
+     
 	public void setClassificacaoCientificas(ClassificacaoCientifica classificacaoCientificas) {
 		this.classificacaoCientificas = classificacaoCientificas;
 	}
-	
 }
