@@ -4,6 +4,7 @@ public class DinossauroDTO {
    
 	private Long id;
 	
+	private String UrlImage;
 	private String Nome;	
  	private Double Comprimento;
  	private Double Peso;
@@ -18,9 +19,19 @@ public class DinossauroDTO {
  	private String reino;
  	private String familia;	
  	private String subordem;
+ 	
 	public Long getId() {
 		return id;
 	}
+	
+	public String getUrlImage() {
+		return UrlImage;
+	}
+	
+	public void setUrlImage(String urlImage) {
+		UrlImage = urlImage;
+	}
+	
 	public void setId(Long id) {
 		this.id = id;
 	}

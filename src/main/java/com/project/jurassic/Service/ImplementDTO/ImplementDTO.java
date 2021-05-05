@@ -37,6 +37,7 @@ public class ImplementDTO implements ServiceDTOImplements {
 		
  		DinossauroDTO dinossauroDto = new DinossauroDTO();
 		dinossauroDto.setId(dinossauro.getId());
+		dinossauroDto.setUrlImage(dinossauro.getUrlImage());
 		dinossauroDto.setNome(dinossauro.getNome());
 		dinossauroDto.setComprimento(dinossauro.getComprimento());
 		dinossauroDto.setPeso(dinossauro.getPeso());
