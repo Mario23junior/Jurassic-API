@@ -1,19 +1,19 @@
 package com.project.jurassic.ModelDTO;
 
+import javax.persistence.OneToOne;
+
+import com.project.jurassic.Model.Dinossauro;
+
 public class ClassificacaoCientificaDTO {
     
-	private Long id;
- 	private String nomeCientifico;
+  	private String nomeCientifico;
  	private String reino;
  	private String familia;	
  	private String subordem;
  	
-	public long getId() {
-		return id;
-	}
-	public void setId(long id) {
-		this.id = id;
-	}
+ 	@OneToOne
+ 	private Dinossauro dinossauro;
+ 	
 	public String getNomeCientifico() {
 		return nomeCientifico;
 	}

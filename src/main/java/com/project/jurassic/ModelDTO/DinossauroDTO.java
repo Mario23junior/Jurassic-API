@@ -1,24 +1,19 @@
 package com.project.jurassic.ModelDTO;
 
+import java.util.List;
+
 public class DinossauroDTO {
    
 	private Long id;
-	
 	private String UrlImage;
 	private String Nome;	
  	private Double Comprimento;
  	private Double Peso;
  	private Double Altura;
 	
- 	private String habitat;
- 	private String alimento;
- 	private String definicao;
- 	private String curiosidade;
- 	
- 	private String nomeCientifico;
- 	private String reino;
- 	private String familia;	
- 	private String subordem;
+  	private List<CaracteristicasDTO> caracteristicas;
+	
+ 	private List<ClassificacaoCientificaDTO> classificacaoCientificas;
  	
 	public Long getId() {
 		return id;
@@ -35,6 +30,7 @@ public class DinossauroDTO {
 	public void setId(Long id) {
 		this.id = id;
 	}
+	
 	public String getNome() {
 		return Nome;
 	}
@@ -59,52 +55,24 @@ public class DinossauroDTO {
 	public void setAltura(Double altura) {
 		Altura = altura;
 	}
-	public String getHabitat() {
-		return habitat;
+
+	public List<CaracteristicasDTO> getCaracteristicas() {
+		return caracteristicas;
 	}
-	public void setHabitat(String habitat) {
-		this.habitat = habitat;
+
+	public void setCaracteristicas(List<CaracteristicasDTO> caracteristicas) {
+		this.caracteristicas = caracteristicas;
 	}
-	public String getAlimento() {
-		return alimento;
+
+	public List<ClassificacaoCientificaDTO> getClassificacaoCientificas() {
+		return classificacaoCientificas;
 	}
-	public void setAlimento(String alimento) {
-		this.alimento = alimento;
+
+	public void setClassificacaoCientificas(List<ClassificacaoCientificaDTO> classificacaoCientificas) {
+		this.classificacaoCientificas = classificacaoCientificas;
 	}
-	public String getDefinicao() {
-		return definicao;
-	}
-	public void setDefinicao(String definicao) {
-		this.definicao = definicao;
-	}
-	public String getCuriosidade() {
-		return curiosidade;
-	}
-	public void setCuriosidade(String curiosidade) {
-		this.curiosidade = curiosidade;
-	}
-	public String getNomeCientifico() {
-		return nomeCientifico;
-	}
-	public void setNomeCientifico(String nomeCientifico) {
-		this.nomeCientifico = nomeCientifico;
-	}
-	public String getReino() {
-		return reino;
-	}
-	public void setReino(String reino) {
-		this.reino = reino;
-	}
-	public String getFamilia() {
-		return familia;
-	}
-	public void setFamilia(String familia) {
-		this.familia = familia;
-	}
-	public String getSubordem() {
-		return subordem;
-	}
-	public void setSubordem(String subordem) {
-		this.subordem = subordem;
-	}
+	
+	
+ 
+ 
 }
