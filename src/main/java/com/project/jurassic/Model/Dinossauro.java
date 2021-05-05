@@ -21,6 +21,9 @@ public class Dinossauro {
 	@NotEmpty(message = "{campo.dino.nome}")
 	private String Nome;
 	
+	@NotEmpty(message = "{campo.dino.image}")
+	private String UrlImage;
+	
 	@Max(78231)
 	private Double Comprimento;
 	
@@ -95,4 +98,14 @@ public class Dinossauro {
 	public void setClassificacaoCientificas(ClassificacaoCientifica classificacaoCientificas) {
 		this.classificacaoCientificas = classificacaoCientificas;
 	}
+
+	public String getUrlImage() {
+		return UrlImage;
+	}
+
+	public void setUrlImage(String urlImage) {
+		UrlImage = urlImage;
+	}
+	
+	
 }
