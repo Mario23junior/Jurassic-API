@@ -2,18 +2,11 @@ package com.project.jurassic.ModelDTO;
 
 public class CaracteristicasDTO {
     
-	private Long id;
- 	private String habitat;
+  	private String habitat;
  	private String alimento;
  	private String definicao;
  	private String curiosidade;
  	
-	public Long getId() {
-		return id;
-	}
-	public void setId(Long id) {
-		this.id = id;
-	}
 	public String getHabitat() {
 		return habitat;
 	}

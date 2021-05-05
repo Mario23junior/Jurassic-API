@@ -1,11 +1,13 @@
 package com.project.jurassic.Model;
 
+import java.util.List;
+
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 import javax.validation.constraints.Max;
 import javax.validation.constraints.NotEmpty;
 
@@ -33,13 +35,11 @@ public class Dinossauro {
 	@Max(78231)
 	private Double Altura;
 	
-	@ManyToOne
-	@JoinColumn(name = "caracteristicas_id")
-	private Caracteristicas caracteristicas;
+	@OneToMany(mappedBy = "dinossauro",cascade = CascadeType.ALL)
+ 	private List<Caracteristicas> caracteristicas;
 	
-	@ManyToOne
-	@JoinColumn(name = "classificacaoCientificas_id")
-	private ClassificacaoCientifica classificacaoCientificas;
+	@OneToMany(mappedBy = "dinossauro",cascade = CascadeType.ALL)
+ 	private List<ClassificacaoCientifica> classificacaoCientificas;
 
 	public Long getId() {
 		return id;
@@ -55,6 +55,14 @@ public class Dinossauro {
 
 	public void setNome(String nome) {
 		Nome = nome;
+	}
+
+	public String getUrlImage() {
+		return UrlImage;
+	}
+
+	public void setUrlImage(String urlImage) {
+		UrlImage = urlImage;
 	}
 
 	public Double getComprimento() {
@@ -82,30 +90,25 @@ public class Dinossauro {
 	}
     
 	@JsonIgnore
-	public Caracteristicas getCaracteristicas() {
+	public List<Caracteristicas> getCaracteristicas() {
 		return caracteristicas;
 	}
 
-	public void setCaracteristicas(Caracteristicas caracteristicas) {
+	public void setCaracteristicas(List<Caracteristicas> caracteristicas) {
 		this.caracteristicas = caracteristicas;
 	}
-    
+     
 	@JsonIgnore
-	public ClassificacaoCientifica getClassificacaoCientificas() {
+	public List<ClassificacaoCientifica> getClassificacaoCientificas() {
 		return classificacaoCientificas;
 	}
-     
-	public void setClassificacaoCientificas(ClassificacaoCientifica classificacaoCientificas) {
+
+	public void setClassificacaoCientificas(List<ClassificacaoCientifica> classificacaoCientificas) {
 		this.classificacaoCientificas = classificacaoCientificas;
 	}
-
-	public String getUrlImage() {
-		return UrlImage;
-	}
-
-	public void setUrlImage(String urlImage) {
-		UrlImage = urlImage;
-	}
+     
+	
+	
 	
 	
 }

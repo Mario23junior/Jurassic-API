@@ -4,7 +4,10 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.ManyToOne;
 import javax.validation.constraints.NotEmpty;
+
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 @Entity
 public class ClassificacaoCientifica {
@@ -24,8 +27,10 @@ public class ClassificacaoCientifica {
 	
 	@NotEmpty(message = "{campo.classCientifica.subordem}")
 	private String subordem;
+    
+	@ManyToOne
+ 	private Dinossauro dinossauro;
 
-	
 	public Long getId() {
 		return id;
 	}
@@ -65,12 +70,13 @@ public class ClassificacaoCientifica {
 	public void setSubordem(String subordem) {
 		this.subordem = subordem;
 	}
-
-	@Override
-	public String toString() {
-		return "ClassificacaoCientifica [id=" + id + ", nomeCientifico=" + nomeCientifico + ", reino=" + reino
-				+ ", familia=" + familia + ", subordem=" + subordem + "]";
+    
+	@JsonIgnore
+	public Dinossauro getDinossauro() {
+		return dinossauro;
 	}
-	
-	
+    
+ 	public void setDinossauro(Dinossauro dinossauro) {
+		this.dinossauro = dinossauro;
+	}
 } 
