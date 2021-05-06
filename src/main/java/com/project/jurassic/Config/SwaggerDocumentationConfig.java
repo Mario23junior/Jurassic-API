@@ -18,7 +18,7 @@ public class SwaggerDocumentationConfig {
      
 	private final String PACKAGE_BUILD = "com.project.jurassic";
 	private final String TITLE_API = "Api de informações de Dinossauro";
-	private final String DESCRITION = "api de gerenciamento e consulta de dados cientificos sobre dinossauros e suas cara";
+	private final String DESCRITION = "api de gerenciamento e consulta de dados científicos sobre dinossauros";
 	private final String NAME_AUTOR = "Mario Junior";
 	private final String VERSION = "1.0.0";
 	private final String ENDERECO = "https://github.com/Mario23junior/Jurassic-API";
