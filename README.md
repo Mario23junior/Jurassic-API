@@ -1,4 +1,4 @@
-<p align="center"><img src="https://images2.imgbox.com/22/00/94H1M39i_o.png"></p>
+<p align="center"><img src="/doc/logo-api.png"></p>
 
 <h1 align="center">Jurassic Rest API</h1>
 
