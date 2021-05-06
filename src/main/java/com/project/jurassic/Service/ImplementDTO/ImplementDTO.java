@@ -40,8 +40,6 @@ public class ImplementDTO implements ServiceDTOImplements {
  		        .setMatchingStrategy(MatchingStrategies.LOOSE);
  		           DinossauroDTO dinossauroDto = modelMapper
  			   .map(dinossauro, DinossauroDTO.class);
-
 		return dinossauroDto;
-		
 	}
 }
