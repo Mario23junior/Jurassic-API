@@ -1,0 +1,425 @@
+{
+	"info": {
+		"_postman_id": "00bf2ba6-fc5d-4b49-afc4-94c69f9e0e02",
+		"name": "Jurassic API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Dinossauro",
+			"item": [
+				{
+					"name": "Salvando um novo dinossauro na base de dados",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"id\": 1,\n    \"urlImage\": \"https://images2.imgbox.com/8a/ec/zTglGhLJ_o.jpg\",\n    \"nome\": \"Braquiossauro\",\n    \"comprimento\": 30.0,\n    \"peso\": 50.0,\n    \"altura\": 25\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/v1/api/dinossauro",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"v1",
+								"api",
+								"dinossauro"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "listando um unico dinossauro por id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/v1/api/dinossauro/2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"v1",
+								"api",
+								"dinossauro",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Deletando dinossauro por id",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/v1/api/dinossauro/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"v1",
+								"api",
+								"dinossauro",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Atualizando informações dos dinossauros por id",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"comprimento\": 12.0,\n    \"nome\": \"Tiranossauro rex\",\n    \"peso\": 4500.0,\n    \"altura\": 3.7\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/v1/api/dinossauro/2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"v1",
+								"api",
+								"dinossauro",
+								"2"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Classificação Cientifica",
+			"item": [
+				{
+					"name": "Salvando  informações cientificas",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"nomeCientifico\": \"Brachiosaurus\",\n    \"reino\":\"Animalia\",\n    \"familia\": \"Brachiosauridae\",\n    \"subordem\":\"Sauropodomorpha\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/v1/api/classificacaoCientifica/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"v1",
+								"api",
+								"classificacaoCientifica",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "listando informaçãos dinossauro id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/v1/api/classificacaoCientifica/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"v1",
+								"api",
+								"classificacaoCientifica",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "listando dinossauros por familia",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/v1/api/classificacaoCientifica/familia/?familia=yrannosauridae",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"v1",
+								"api",
+								"classificacaoCientifica",
+								"familia",
+								""
+							],
+							"query": [
+								{
+									"key": "familia",
+									"value": "yrannosauridae"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Deletando informaçãoes por id",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/v1/api/classificacaoCientifica/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"v1",
+								"api",
+								"classificacaoCientifica",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "atualizando  informaçãos por id",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"id\":1,\n    \"nomeCientifico\": \"Tyrannosaurus\",\n    \"reino\": \"Jurassico\",\n    \"familia\": \"yrannosauridae\",\n    \"subordem\": \"Theropoda\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/v1/api/classificacaoCientifica/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"v1",
+								"api",
+								"classificacaoCientifica",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Caracteristicas",
+			"item": [
+				{
+					"name": "Salvando as caracteristicas",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"habitat\": \"florestas\",\n    \"alimento\":\"herbívoro\",\n    \"definicao\": \"O Braquiossauro cujo nome significa 'lagarto braço', dado os seus membros anteriores serem maiores que os posteriores, era um género de dinossauros saurópode que viveu durante o fim do período Jurássico. Este animal tinha entre 18 e 20 metros de altura e cerca de 25 metros de comprimento\",\n    \n    \"curiosidade\":\"Um braquiossauro podia medir mais de 23 metros de comprimento e pesar mais de 80 toneladas. De altura, ou seja, de sua cabeça até o chão, ele tinha cerca de 12 metros. As características mais marcantes desse dinossauro eram as costas em declive e o pescoço longo.\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/v1/api/caracteristicas",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"v1",
+								"api",
+								"caracteristicas"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "listando caracteristicas por id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/v1/api/caracteristicas/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"v1",
+								"api",
+								"caracteristicas",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "listando as caracteristicas por habitat",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/v1/api/caracteristicas/alimento/?alimento=carnivero",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"v1",
+								"api",
+								"caracteristicas",
+								"alimento",
+								""
+							],
+							"query": [
+								{
+									"key": "alimento",
+									"value": "carnivero"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "deletando caracteristicas por id",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/v1/api/caracteristicas/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"v1",
+								"api",
+								"caracteristicas",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "atualizando caracteristicas por id",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"habitat\": \"florestas\",\n    \"alimento\":\"carnivero\",\n    \"definicao\": \"Tyrannosaurus é um gênero de dinossauros terópodes celurossauros que viveram durante o final do período cretáceo, há aproximadamente 66 milhões de anos, em toda a região que hoje é a América do Norte. \",\n    \"curiosidade\":\"Tyrannosaurus é um gênero de dinossauros terópodes celurossauros que viveram durante o final do período cretáceo, há aproximadamente 66 milhões de anos, em toda a região que hoje é a América do Norte\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/v1/api/caracteristicas/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"v1",
+								"api",
+								"caracteristicas",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "DTO",
+			"item": [
+				{
+					"name": "listando apenas os dados pertinentes",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/v1/api/data/list",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"v1",
+								"api",
+								"data",
+								"list"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
