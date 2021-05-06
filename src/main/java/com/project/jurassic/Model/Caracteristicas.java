@@ -1,5 +1,6 @@
 package com.project.jurassic.Model;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -22,10 +23,12 @@ public class Caracteristicas {
 	@NotEmpty(message = "{campo.classCientifica.alimento}")
 	private String alimento;
 	
+	@Column(length = 700)
 	@NotEmpty(message = "{campo.classCientifica.definicao}")
 	private String definicao;
 	
-	@NotEmpty(message = "{campo.classCientifica.curiosidade}")
+	@Column(length = 700)
+ 	@NotEmpty(message = "{campo.classCientifica.curiosidade}")
 	private String curiosidade;
 
 	@ManyToOne

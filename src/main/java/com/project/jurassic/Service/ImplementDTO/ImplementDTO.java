@@ -38,7 +38,7 @@ public class ImplementDTO implements ServiceDTOImplements {
 	public DinossauroDTO ConvertToDTO(Dinossauro dinossauro) {
  		modelMapper.getConfiguration()
  		        .setMatchingStrategy(MatchingStrategies.LOOSE);
- 		      DinossauroDTO dinossauroDto = modelMapper
+ 		           DinossauroDTO dinossauroDto = modelMapper
  			   .map(dinossauro, DinossauroDTO.class);
 
 		return dinossauroDto;
