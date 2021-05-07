@@ -9,8 +9,10 @@ import javax.persistence.ManyToOne;
 import javax.validation.constraints.NotEmpty;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 
 @Entity
+@JsonPropertyOrder({"id, habitat, aliemnto, curiosidade, definicao"})
 public class Caracteristicas {
     
 	@Id

@@ -12,8 +12,10 @@ import javax.validation.constraints.Max;
 import javax.validation.constraints.NotEmpty;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 
 @Entity
+@JsonPropertyOrder({"id, Nome, UrlImage ,Comprimento , peso, Altura"})
 public class Dinossauro {
     
 	@Id
