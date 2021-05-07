@@ -2,6 +2,9 @@ package com.project.jurassic.ModelDTO;
 
 import java.util.List;
 
+import com.fasterxml.jackson.annotation.JsonPropertyOrder;
+
+@JsonPropertyOrder({"id, UrlImage, Nome, Comprimento, Peso, Altura, classificacaoCientificas, caracteristicas"})
 public class DinossauroDTO {
    
 	private Long id;
