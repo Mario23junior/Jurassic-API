@@ -30,7 +30,7 @@ java -jar target/jurassic-1.0-SNAPSHOT.jar
 
 ## Informações
 
-```
+```json
 [
    {
       "id":1,
